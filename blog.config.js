@@ -20,7 +20,7 @@ const BLOG = {
   AUTHOR: process.env.NEXT_PUBLIC_AUTHOR || '蓑笠翁', // 您的昵称 
   BIO: process.env.NEXT_PUBLIC_BIO || '一个普通的资深干饭人🍚', // 作者简介
   LINK: process.env.NEXT_PUBLIC_LINK || 'slw.ac.cn', // 网站地址
-  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '软件,互联网,Golang,区块链,架构师,密码学,web3,云原生', // 网站关键词 英文逗号隔开
+  KEYWORDS: process.env.NEXT_PUBLIC_KEYWORD || '区块链, 架构师, 数字安全, web3, 云原生', // 网站关键词 英文逗号隔开
   // 社交链接，不需要可留空白，例如 CONTACT_WEIBO:''
   CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL || '150627601@qq.com', // 邮箱地址
   CONTACT_WEIBO: process.env.NEXT_PUBLIC_CONTACT_WEIBO || '', // 你的微博个人主页
