@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from 'react'
 import BLOG from '@/blog.config'
 import BlogPostListScroll from './components/BlogPostListScroll'
 import BlogPostListPage from './components/BlogPostListPage'
+import Hero from './components/Hero'
 import StickyBar from './components/StickyBar'
 import { isBrowser } from '@/lib/utils'
 import TocDrawerButton from './components/TocDrawerButton'
@@ -83,7 +84,7 @@ const LayoutBase = (props) => {
             <div className='h-0.5 w-full bg-gray-700 dark:bg-gray-600 hidden lg:block' />
 
             {/* 主区 */}
-            <main id='wrapper' className={(BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' next relative flex justify-center flex-1 pb-12'}>
+            <main id='wrapper' className={`${CONFIG.HOME_BANNER_ENABLE ? '' : 'pt-16'}` (BLOG.LAYOUT_SIDEBAR_REVERSE ? 'flex-row-reverse' : '') + ' next relative flex justify-center flex-1 pb-12'}>
                 {/* 左侧栏样式 */}
                 <SideAreaLeft targetRef={targetRef} {...props} />
 
@@ -126,14 +127,14 @@ const LayoutBase = (props) => {
 
 /**
  * 首页
- * 首页就是一个博客列表
+ * 是一个博客列表，嵌入一个Hero大图
  * @param {*} props
  * @returns
  */
-const LayoutIndex = (props) => {
-  return <LayoutPostList {...props} />
+ const LayoutIndex = (props) => {
+  const headerSlot = CONFIG.HOME_BANNER_ENABLE && <Hero {...props} />
+  return <LayoutPostList {...props} headerSlot={headerSlot} className='pt-8' />
 }
-
 /**
  * 博客列表
  * @param {*} props
